@@ -1,24 +1,20 @@
 extends Area2D
+class_name Player
 
-
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
 export var radius = 600
-export var speed = 60
+export var base_speed = 1
 var angle = 0
 
+var speed = base_speed
 
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _physics_process(delta):
 	angle += speed * delta
 	global_position = Vector2(cos(angle), -sin(angle)) * radius
 	rotation = -angle + (PI/2)
-	if (Input.is_action_just_pressed("ui_left") || Input.is_action_just_pressed("ui_right")):
+	
+	var dir = ceil(Input.get_action_strength("move_left") - Input.get_action_strength("move_right"))
+	if dir != 0:
+		speed = base_speed * dir
+	
+	if Input.is_action_just_pressed("swap_dir"):
 		speed *= -1
-		
