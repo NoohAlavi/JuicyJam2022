@@ -9,10 +9,10 @@
 config_version=4
 
 _global_script_classes=[ {
-"base": "Area2D",
+"base": "KinematicBody2D",
 "class": "Player",
 "language": "GDScript",
-"path": "res://Game/Player/Player.gd"
+"path": "res://Player/Player.gd"
 } ]
 _global_script_class_icons={
 "Player": ""
