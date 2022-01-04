@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://assets/circle.png" type="Texture" id=1]
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Bullet/Bullet.tscn" type="PackedScene" id=3]
 
 [node name="Node2D" type="Node2D"]
 
@@ -15,3 +16,7 @@ radius = 300
 
 [node name="Camera2D" type="Camera2D" parent="."]
 current = true
+zoom = Vector2( 1.25, 1.25 )
+
+[node name="Bullet" parent="Camera2D" instance=ExtResource( 3 )]
+position = Vector2( 312, -152 )
