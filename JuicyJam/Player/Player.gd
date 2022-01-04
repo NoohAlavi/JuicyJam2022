@@ -4,12 +4,12 @@ class_name Player
 export var radius = 600
 export var base_speed = 1
 export var velocity = Vector2.ZERO
-var angle = 0
+var angle = PI / 2
 
 var speed = base_speed
 
 func _physics_process(delta):
-	var dir = ceil(Input.get_action_strength("move_left") - Input.get_action_strength("move_right"))
+	var dir = round(Input.get_action_strength("move_left") - Input.get_action_strength("move_right"))
 	if dir != 0:
 		speed = base_speed * dir
 	
@@ -17,8 +17,12 @@ func _physics_process(delta):
 		speed *= -1
 	
 	angle += speed * delta
-	velocity = Vector2(-cos(angle), sin(angle)) * radius
-	rotation = angle + (PI/2)
+	var oldAngle = angle - (speed * delta)
+	velocity = (Vector2(cos(angle), -sin(angle)) - Vector2(cos(oldAngle), -sin(oldAngle))).normalized()
+	
+	velocity *= radius
+	print(velocity)
+	rotation = -angle + (PI/2)
 
 	move_and_slide(velocity)
 
