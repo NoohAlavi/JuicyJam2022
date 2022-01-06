@@ -1,7 +1,7 @@
 extends Area2D
 class_name Bullet
 
-export var speed = 1.25
+export var speed = 2
 var radius = 333
 
 onready var angle = Global.player.get_angle()
