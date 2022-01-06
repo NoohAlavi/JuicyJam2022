@@ -27,10 +27,13 @@ func get_dir():
 		return 1
 	else:
 		return -1
-	
 
 func _physics_process(delta):
 	var dir = round(Input.get_action_strength("move_left") - Input.get_action_strength("move_right"))
+	
+	if Input.is_action_just_pressed("swap_dir"):
+		dir *= -1
+	
 	if dir != 0:
 		speed = base_speed * dir
 	
