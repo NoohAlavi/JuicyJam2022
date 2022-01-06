@@ -4,7 +4,7 @@ extends KinematicBody2D
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
-export var radius = 600
+export var radius = 300
 export var speed = 1
 var angle = 0
 

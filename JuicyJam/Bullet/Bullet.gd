@@ -2,12 +2,13 @@ extends Area2D
 class_name Bullet
 
 export var speed = 1.25
-export var dir = 1
-var angle = PI / 2
-var radius = 400
+var radius = 333
+
+onready var angle = Global.player.get_angle()
+onready var dir = Global.player.get_dir()
 
 func _physics_process(delta):
-	angle += speed * delta
+	angle += speed * delta * dir
 	global_position = Vector2(cos(angle), -sin(angle)) * radius
 	rotation = -angle + (PI/2)
 
