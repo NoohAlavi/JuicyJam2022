@@ -1,16 +1,17 @@
-extends KinematicBody2D
+extends Area2D
 
 
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
 export var radius = 300
-export var speed = 1
+export (float) var speed = 1
 var angle = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	global_position = radius * Vector2(cos(angle), -sin(angle))
+	$Sprite.visible = true
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -19,9 +20,5 @@ func _ready():
 
 func _physics_process(delta):
 	angle += speed * delta
-	var oldAngle = angle - (speed * delta)
-	var velocity = (Vector2(cos(angle), -sin(angle)) - Vector2(cos(oldAngle), -sin(oldAngle))).normalized()
-	velocity *= radius
+	global_position = radius * Vector2(cos(angle), -sin(angle))
 	rotation = -angle
-
-	move_and_slide(velocity)

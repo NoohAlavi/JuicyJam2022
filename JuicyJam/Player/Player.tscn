@@ -41,6 +41,7 @@ tracks/1/keys = {
 position = Vector2( -2, -298 )
 script = ExtResource( 1 )
 radius = 300
+base_speed = 1.2
 bullet_scene = ExtResource( 3 )
 
 [node name="Sprite" type="Sprite" parent="."]

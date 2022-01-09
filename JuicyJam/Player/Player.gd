@@ -2,7 +2,7 @@ extends KinematicBody2D
 class_name Player
 
 export var radius = 600
-export var base_speed = 1
+export (float) var base_speed = 1
 export var velocity = Vector2.ZERO
 export var bullet_scene: PackedScene
 
