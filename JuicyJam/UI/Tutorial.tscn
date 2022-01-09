@@ -1,0 +1,55 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://UI/dialogue.theme" type="Theme" id=2]
+[ext_resource path="res://assets/square.png" type="Texture" id=3]
+[ext_resource path="res://UI/MainMenu.gd" type="Script" id=4]
+
+[node name="Tutorial" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 2 )
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="."]
+modulate = Color( 0.176471, 0.176471, 0.176471, 1 )
+margin_right = 40.0
+margin_bottom = 40.0
+rect_scale = Vector2( 1.28, 0.8 )
+texture = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CreditsBack" type="Button" parent="."]
+margin_left = 340.0
+margin_top = 575.0
+margin_right = 940.0
+margin_bottom = 650.0
+text = "Back"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="."]
+margin_right = 1278.0
+margin_bottom = 720.0
+text = "You are a mage, your mission is to clear the planet, by evading spikes, and attacking enemies.
+
+---
+
+Change Direction - Left/Right
+Jump - Space/Up
+Shoot - Q/E
+
+"
+align = 1
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="pressed" from="CreditsBack" to="." method="_on_CreditsBack_pressed"]

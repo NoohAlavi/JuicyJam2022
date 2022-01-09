@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://assets/fonts/8BitOperator/8bitOperatorPlus8-Bold.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://UI/dialogue.theme" type="Theme" id=2]
 [ext_resource path="res://assets/square.png" type="Texture" id=3]
+[ext_resource path="res://UI/MainMenu.gd" type="Script" id=4]
 
 [sub_resource type="DynamicFont" id=1]
 size = 128
@@ -12,6 +13,7 @@ font_data = ExtResource( 1 )
 anchor_right = 1.0
 anchor_bottom = 1.0
 theme = ExtResource( 2 )
+script = ExtResource( 4 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -68,3 +70,7 @@ scroll_active = false
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[connection signal="pressed" from="PlayButton" to="." method="_on_PlayButton_pressed"]
+[connection signal="pressed" from="HowToPlay" to="." method="_on_HowToPlay_pressed"]
+[connection signal="pressed" from="Credits" to="." method="_on_Credits_pressed"]

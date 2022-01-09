@@ -17,4 +17,16 @@ func _ready():
 
 
 func _on_PlayButton_pressed():
-	pass # Replace with function body.
+	get_tree().change_scene("res://Game/Game.tscn")
+
+
+func _on_CreditsBack_pressed():
+	get_tree().change_scene("res://UI/MainMenu.tscn")
+
+
+func _on_Credits_pressed():
+	get_tree().change_scene("res://UI/Credits.tscn")
+
+
+func _on_HowToPlay_pressed():
+	get_tree().change_scene("res://UI/Tutorial.tscn")

@@ -4,7 +4,8 @@ extends Node
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
-onready var player = get_node("/root/Game/Player")
+var player : Player
+const Player = preload("Player/Player.gd")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():

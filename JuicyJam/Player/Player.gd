@@ -11,6 +11,9 @@ var angle = PI / 2
 var speed = base_speed
 var is_jumping = false
 
+func _ready():
+	Global.player = self
+
 func _process(delta):
 	if Input.is_action_just_pressed("shoot"):
 		shoot()
