@@ -1,11 +1,21 @@
 extends Area2D
 class_name Bullet
 
-export var speed = 2
+export var speed = 3
 var radius = 333
 
 onready var angle = Global.player.get_angle()
 onready var dir = Global.player.get_dir()
+
+func _ready():
+	var r = rand_range(0, .75)
+	var g = rand_range(0, .75)
+	var b = rand_range(0, .75)
+	var col = Color(r, g, b, 1)
+	
+	$Sprite.modulate = col
+	$CPUParticles2D.emitting = true
+	$CPUParticles2D.color = col
 
 func _physics_process(delta):
 	angle += speed * delta * dir
@@ -20,7 +30,7 @@ func _on_Bullet_area_entered(area):
 	if typeof(area) == typeof(self):
 		if (area.name.begins_with("Enemy")):
 			Global.score.add(5)
-			yield(wait(0.1), "timeout")
+			#yield(wait(0.1), "timeout")
 		area.queue_free()
 		queue_free()
 		

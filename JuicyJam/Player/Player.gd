@@ -34,6 +34,11 @@ func get_dir():
 func _physics_process(delta):
 	var dir = round(Input.get_action_strength("move_left") - Input.get_action_strength("move_right"))
 	
+	if dir == 1:
+		$AnimatedSprite.flip_h = true
+	if dir == -1:
+		$AnimatedSprite.flip_h = false
+	
 	if Input.is_action_just_pressed("swap_dir"):
 		dir *= -1
 	
