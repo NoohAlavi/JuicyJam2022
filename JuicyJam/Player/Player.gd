@@ -58,3 +58,7 @@ func shoot():
 
 func end_jump():
 	is_jumping = false
+
+func die():
+	Global.player_dead = true
+	queue_free()

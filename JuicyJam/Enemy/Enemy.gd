@@ -22,3 +22,12 @@ func _physics_process(delta):
 	angle += speed * delta
 	global_position = radius * Vector2(cos(angle), -sin(angle))
 	rotation = -angle
+
+
+func _on_Area2D_body_entered(body):
+	if (body.name == "Player"):
+		Global.player.die()
+		die()
+
+func die():
+	queue_free()

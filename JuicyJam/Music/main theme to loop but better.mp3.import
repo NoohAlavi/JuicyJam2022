@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/main theme to loop but better.mp3-6888bee9a79aa4b65304b651d1bb96c9.mp3str"
+
+[deps]
+
+source_file="res://Music/main theme to loop but better.mp3"
+dest_files=[ "res://.import/main theme to loop but better.mp3-6888bee9a79aa4b65304b651d1bb96c9.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
